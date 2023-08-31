@@ -1,0 +1,21 @@
+name: PR Check
+on:
+  - pull_request
+
+jobs:
+  pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Chekout
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          npm install
+        working-directory: ./app
+
+      - name: Run test
+        run: |
+          npm test
+        working-directory: ./app
