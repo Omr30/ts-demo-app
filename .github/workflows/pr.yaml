@@ -18,5 +18,4 @@ jobs:
       - name: Run test
         run: |
           npm test
-          exit 1
         working-directory: ./app
